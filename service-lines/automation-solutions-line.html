@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proposal: Custom Automation Solutions</title>
+    <style>
+      .top-nav {
+        background-color: #ffffff; /* White background for a cleaner look */
+        border-bottom: 1px solid #dee2e6; /* Subtle border for separation */
+        padding: 0; /* Remove default padding if any */
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Softer shadow */
+      }
+      .nav-container {
+        width: 80%;
+        max-width: 900px; /* Consistent with your page content */
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px; /* Slightly adjusted height */
+      }
+      .nav-logo {
+        color: #333; /* Darker text for logo for readability on white */
+        text-decoration: none;
+        font-size: 1.1em; /* Adjusted size */
+        font-weight: 600; /* Slightly bolder */
+      }
+      .top-nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center; /* Vertically align items */
+      }
+      .top-nav ul li {
+        margin: 0;
+      }
+      .top-nav ul li a {
+        color: #495057; /* Professional, slightly muted text color */
+        text-decoration: none;
+        padding: 22px 16px; /* Adjusted padding for a balanced look */
+        display: block;
+        font-size: 0.9em; /* Slightly smaller for a cleaner nav */
+        font-weight: 500; /* Medium weight */
+        border-bottom: 3px solid transparent; /* Placeholder for active/hover border */
+        transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+      }
+      .top-nav ul li a:hover {
+        color: #007bff; /* Primary blue for hover - consistent interactive color */
+        border-bottom-color: #007bff; /* Show border on hover */
+      }
+      /* Style for the active page link */
+      .top-nav ul li a.active {
+        color: #0056b3; /* Darker blue for active link text */
+        font-weight: 600; /* Bolder */
+        border-bottom-color: #0056b3; /* Prominent border for active link */
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        max-width: 900px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #28a745; /* Green for automation/efficiency */
+      }
+      header h1 {
+        color: #28a745;
+        font-size: 2.5em;
+        margin-bottom: 5px;
+      }
+      header p {
+        font-size: 1.1em;
+        color: #555;
+      }
+      h2 {
+        color: #1e7e34; /* Darker Green */
+        font-size: 1.8em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 8px;
+      }
+      h3 {
+        color: #218838; /* Medium Green */
+        font-size: 1.4em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      p,
+      li {
+        font-size: 1em;
+        color: #454545;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        padding-left: 10px;
+      }
+      .swot-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .swot-table th,
+      .swot-table td {
+        border: 1px solid #dee2e6;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      .swot-table th {
+        background-color: #28a745;
+        color: #ffffff;
+        font-weight: bold;
+      }
+      .swot-table td ul {
+        margin-bottom: 0;
+        padding-left: 15px;
+      }
+      .highlight {
+        color: #28a745;
+        font-weight: bold;
+      }
+      .quick-win-conditional {
+        background-color: #fff3cd; /* Yellow for conditional quick win */
+        border-left: 5px solid #ffc107;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+      .pricing-section strong {
+        color: #1e7e34;
+      }
+      .steps-to-launch ol li {
+        margin-bottom: 15px;
+        padding-left: 5px;
+      }
+      .steps-to-launch strong {
+        display: block;
+        margin-bottom: 3px;
+        color: #1e7e34;
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        font-size: 0.9em;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">PHM Tech Services</a>
+        <ul>
+          <li><a href="app-advisory-line.html">App Advisory</a></li>
+          <li><a class="active" href="automation-solutions-line.html">Custom Automation</a></li>
+          <li><a href="business-intelligence-line.html">Data & BI</a></li>
+          <li><a href="niche-software-dev-line.html">Specialized Software</a></li>
+          <li><a href="tech-training-line.html">Tech Training</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <header>
+        <h1>Custom Automation Solutions for Accounting Processes</h1>
+        <p>A Strategic Service Line for Phipps Henson McAllister</p>
+      </header>
+
+      <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>
+          Accounting and finance departments in many UK businesses, particularly SMEs and even within accounting
+          practices themselves, are often burdened by repetitive, time-consuming manual tasks. These include data entry,
+          invoice processing, bank reconciliations, report generation, and payroll administration. Such manual processes
+          are not only inefficient but also prone to errors, hindering productivity and diverting skilled personnel from
+          higher-value strategic activities.
+        </p>
+        <p>
+          <span class="highlight">Custom Automation Solutions</span> offer a powerful remedy by developing and
+          implementing bespoke software solutions (scripts, bots, integrations) tailored to automate these specific
+          accounting workflows. For Phipps Henson McAllister, with its team of senior software engineers who possess
+          significant accountancy domain knowledge, this service line represents a prime opportunity to deliver
+          transformative value. We can design and build automation that goes beyond the capabilities of standard
+          off-the-shelf software, directly addressing unique client pain points.
+        </p>
+        <p>
+          This service focuses on analyzing existing processes, identifying automation opportunities, and developing
+          robust, efficient, and compliant automated solutions that integrate seamlessly with clients' existing systems.
+        </p>
+      </section>
+
+      <section id="swot-analysis">
+        <h2>2. SWOT Analysis</h2>
+        <table class="swot-table">
+          <thead>
+            <tr>
+              <th>Strengths</th>
+              <th>Weaknesses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>
+                    <strong>Unmatched Dual Expertise:</strong> Deep software engineering capabilities combined with
+                    practical accountancy domain knowledge, allowing for nuanced and effective automation design.
+                  </li>
+                  <li>
+                    <strong>Problem-Solving Focus:</strong> Ability to understand the 'why' behind accounting processes,
+                    leading to more intelligent automation.
+                  </li>
+                  <li>
+                    <strong>Customization Capability:</strong> Can build truly bespoke solutions where off-the-shelf
+                    tools fall short or are too generic.
+                  </li>
+                  <li>
+                    <strong>Existing Client Base:</strong> Potential to identify automation needs within current SME
+                    clients and other accounting firms we serve.
+                  </li>
+                  <li>
+                    <strong>Credibility:</strong> As an accountancy firm, solutions will inherently be designed with
+                    compliance and financial best practices in mind.
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <strong>Perception of Cost:</strong> Custom solutions might be perceived as more expensive than
+                    off-the-shelf software, requiring clear ROI demonstration.
+                  </li>
+                  <li>
+                    <strong>Solution Maintenance:</strong> Custom automations can require ongoing maintenance,
+                    especially if underlying systems or regulations change (e.g., "bots break").
+                  </li>
+                  <li>
+                    <strong>Sales Cycle:</strong> Convincing clients of the value of custom automation may involve a
+                    longer sales and education cycle than simpler services.
+                  </li>
+                  <li>
+                    <strong>Scalability of Bespoke Solutions:</strong> Each solution is custom; scaling delivery
+                    requires careful project management and potentially team expansion.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Opportunities</th>
+              <th>Threats</th>
+            </tr>
+            <tr>
+              <td>
+                <ul>
+                  <li>
+                    <strong>High Demand for Efficiency:</strong> Research shows
+                    <span class="highlight">44% of UK businesses plan to adopt AI in finance/accounting</span>, and over
+                    half of CFOs cite automation to relieve repetitive admin.
+                  </li>
+                  <li>
+                    <strong>Significant ROI Potential for Clients:</strong> Automation can lead to dramatic time
+                    savings, error reduction, and cost savings (e.g., research citing
+                    <span class="highlight">90% less data-entry time</span> after automation).
+                  </li>
+                  <li>
+                    <strong>Underserved Niche:</strong> Many SMEs have specific needs not met by large RPA vendors,
+                    creating a niche for tailored, smaller-scale automation.
+                  </li>
+                  <li>
+                    <strong>Investment in Automation:</strong> An ICAEW survey found
+                    <span class="highlight">71% of mid-tier managing partners intend to invest in AI/automation</span>
+                    within 3 years, and 48% foresee rising client demand.
+                  </li>
+                  <li>
+                    <strong>Value-Based Pricing:</strong> Potential for premium pricing based on the significant value
+                    and ROI delivered.
+                  </li>
+                  <li>
+                    <strong>Long-Term Partnerships:</strong> Successful automation projects can lead to ongoing
+                    maintenance, support, and further development work.
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    <strong>Competition:</strong> Specialist RPA consultants, freelance automation experts (e.g.,
+                    Zapier/Make.com consultants), and larger IT consultancies.
+                  </li>
+                  <li>
+                    <strong>Rapid Evolution of Automation Tools:</strong> Off-the-shelf tools are constantly improving,
+                    potentially reducing the need for custom solutions in some areas.
+                  </li>
+                  <li>
+                    <strong>Scope Creep:</strong> Custom development projects are notoriously prone to scope creep if
+                    not managed tightly.
+                  </li>
+                  <li>
+                    <strong>Client Technical Debt:</strong> Clients' outdated existing systems can make custom
+                    integration complex and costly.
+                  </li>
+                  <li>
+                    <strong>Resistance to Change:</strong> Staff may resist automation due to fear of job displacement
+                    or discomfort with new processes.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="learning-curve">
+        <h2>3. Learning Curve for Team</h2>
+        <p>
+          Our senior software engineers already possess strong programming, system design, and problem-solving skills,
+          alongside accounting domain knowledge. The additional learning will focus on specific automation technologies
+          and deeper integration patterns:
+        </p>
+        <ul>
+          <li>
+            <strong>Robotic Process Automation (RPA) & Workflow Tools:</strong>
+            <ul>
+              <li>
+                Training on platforms like
+                <span class="highlight"
+                  >Microsoft Power Automate (including RPA capabilities like PL-500 certification)</span
+                >, UiPath, or Automation Anywhere if targeting more complex UI automation. For simpler workflows,
+                proficiency in Zapier or Make.com.
+              </li>
+              <li>Understanding best practices for designing, developing, and deploying software bots.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Integration & API Development:</strong>
+            <ul>
+              <li>
+                Deepening expertise in working with APIs of common accounting software (Xero, QuickBooks, Sage) and
+                other business systems (CRMs, e-commerce platforms).
+              </li>
+              <li>Mastery of data formats (CSV, XML, JSON), API authentication (OAuth2, API keys), and webhooks.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Advanced Scripting & Programming for Automation:</strong>
+            <ul>
+              <li>
+                Leveraging Python (with libraries like Pandas, Selenium), JavaScript (for web automation or Google Apps
+                Script), or C#/.NET for building custom automation scripts and components.
+              </li>
+              <li>Techniques for automating desktop applications or web UIs where APIs are unavailable.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Cloud Platforms & DevOps for Automation:</strong>
+            <ul>
+              <li>
+                Utilizing cloud services (Azure Logic Apps, AWS Lambda/Step Functions) for hosting and managing
+                serverless automation workflows or integration components.
+              </li>
+              <li>
+                Understanding of databases (for staging or logging data) and ETL (Extract, Transform, Load) processes if
+                moving significant financial data.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Niche UK Accounting Rules & Process Nuances:</strong>
+            <ul>
+              <li>
+                While already possessing domain knowledge, further deepening understanding of specific rules (e.g.,
+                complex VAT scenarios, MTD intricacies for specific industries, payroll regulations) is vital to ensure
+                automations are fully compliant and robust.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          <strong>Effort Estimation:</strong> Research suggests around
+          <span class="highlight">1-3 months of targeted training</span> (e.g., a Microsoft PL-500 course is typically
+          3-5 days intensive, UiPath Developer Certification 20-40 hours study) plus practical on-the-job projects to
+          become proficient in one major RPA/workflow platform and relevant integration techniques. Given our team's
+          existing software engineering background, this would focus on the specific tooling and automation design
+          patterns.
+        </p>
+      </section>
+
+      <section id="ease-of-launch">
+        <h2>4. Ease of Launch / "Quick Win" Potential</h2>
+        <div class="quick-win-conditional">
+          <p>
+            <strong
+              >Custom Automation Solutions can be a "Quick Win" <span class="highlight">IF</span> strategically scoped
+              to small, well-defined projects addressing clear client pain points.</strong
+            >
+          </p>
+          <ul>
+            <li>
+              <strong>Leveraging Existing Skills:</strong> Our core software engineering and accounting knowledge forms
+              a strong base.
+            </li>
+            <li>
+              <strong>Targeted Small Projects:</strong> Instead of large-scale RPA deployments, focus initially on:
+              <ul>
+                <li>
+                  Automating specific, highly repetitive data entry tasks from structured sources (e.g., specific
+                  spreadsheets into accounting software).
+                </li>
+                <li>
+                  Creating scripts for custom report consolidation or generation not easily done in standard software.
+                </li>
+                <li>
+                  Building simple integrations between two key systems using tools like Zapier/Power Automate where our
+                  engineers can quickly configure and extend.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>High Impact for Clients:</strong> Even small automations can deliver significant time savings and
+              error reduction, quickly demonstrating value.
+            </li>
+            <li>
+              <strong>Phased Approach:</strong>
+              <ul>
+                <li>
+                  Phase 1 (Quick Win): Focus on script-based automation, advanced Excel/VBA, and connector tools
+                  (Zapier, Power Automate basic flows). These require less specialized RPA platform training.
+                </li>
+                <li>
+                  Phase 2: Introduce more complex RPA solutions after building initial success stories and deeper team
+                  expertise in platforms like UiPath or Power Automate RPA.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            <strong>Not a Quick Win If:</strong> Targeting large, complex, multi-system enterprise-grade RPA projects
+            from day one. These require extensive discovery, development, and specialized tooling expertise that takes
+            longer to establish.
+          </p>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing-section">
+        <h2>5. Pricing Strategy</h2>
+        <p>
+          Pricing for Custom Automation Solutions should reflect the value delivered, complexity, and development
+          effort:
+        </p>
+        <ul>
+          <li>
+            <strong>Hourly Consulting & Development Rates:</strong>
+            <ul>
+              <li>For discovery, process analysis, custom scripting, and smaller automation builds.</li>
+              <li>
+                Suggested Rate: <span class="highlight">£50 - £90 per hour</span> for software development, potentially
+                blended. RPA specialist contractors in the UK command £400-£600/day (approx. £50-£75/hr). Our combined
+                expertise could justify rates in the upper end of the developer range or slightly above for specialized
+                automation work.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Fixed-Price Project Fees (for well-scoped projects):</strong>
+            <ul>
+              <li>Ideal for defined "quick win" automation tasks or small to medium-sized projects.</li>
+              <li>
+                <strong>Example "Quick Win" Project: "Automated Report Pack Generator":</strong> £1,500 - £5,000
+                (depending on complexity and number of data sources/reports).
+              </li>
+              <li>
+                <strong>Example: "Automated Invoice Data Entry from Specific Supplier Format":</strong> £2,000 - £7,000.
+              </li>
+              <li>
+                Research indicates small automation projects can range from <span class="highlight">£5k - £20k+</span>.
+                Initial "quick win" projects should aim for the lower end of this or slightly below to build traction.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Phased Project Billing:</strong>
+            <ul>
+              <li>
+                For larger or more complex automation projects, break them into phases (e.g., Discovery & Design,
+                Development & Testing, Deployment & Training) with separate pricing for each phase.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Retainer for Ongoing Support & Maintenance:</strong>
+            <ul>
+              <li>
+                Post-implementation, offer a monthly or annual retainer for monitoring, updating, and maintaining the
+                custom automation solutions.
+              </li>
+              <li>
+                E.g., £1k - £5k/month for support on more complex solutions, or a percentage of the initial project fee
+                annually (e.g., 10-20%). For smaller automations, a lower fixed monthly fee.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          <strong>Note:</strong> Emphasize the Return on Investment (ROI) by quantifying time savings, error reduction,
+          and potential cost savings for the client. Value-based pricing arguments can be very strong for automation.
+        </p>
+      </section>
+
+      <section id="steps-to-launch" class="steps-to-launch">
+        <h2>6. Steps to Launch & Secure First Customer</h2>
+        <p>To launch Custom Automation Solutions, focusing on small, scoped projects for "quick wins":</p>
+        <ol>
+          <li>
+            <strong>Internal Skill Sharpening & Tool Selection (Target: 1-2 Weeks):</strong>
+            <ul>
+              <li>
+                Designate 1-2 software engineers with the strongest client-facing and process analysis skills to
+                spearhead this.
+              </li>
+              <li>
+                Conduct a rapid internal review of accessible automation tools:
+                <ul>
+                  <li>
+                    Ensure proficiency in
+                    <span class="highlight">Python scripting for data manipulation/automation</span>.
+                  </li>
+                  <li>
+                    Master a readily available workflow tool like
+                    <span class="highlight">Microsoft Power Automate (focus on cloud flows initially) or Zapier</span>
+                    for simpler integrations. This aligns with a phased approach before deep RPA platform dives.
+                  </li>
+                  <li>
+                    Review API documentation for Xero, QuickBooks, and Sage to identify common automation opportunities.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Develop a V1 "Process Automation Discovery Checklist" to use with potential clients to identify
+                high-impact, low-complexity opportunities.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Define & Package Initial "Quick Win" Automation Offers (Target: Concurrent with Step 1):</strong>
+            <ul>
+              <li>
+                Identify 2-3 specific, common accounting pain points that are highly amenable to simple automation.
+                Examples:
+                <ul>
+                  <li>
+                    <strong>"Automated Monthly Report Consolidation":</strong> Takes data from 2-3 specific
+                    spreadsheets/sources and generates a consistent monthly report. Fixed Price: £950 - £1,950.
+                  </li>
+                  <li>
+                    <strong>"Streamlined Data Import from [Specific System/Format]":</strong> Automates importing data
+                    from a regularly received file (e.g., sales from an e-commerce platform CSV) into the accounting
+                    system. Fixed Price: £1,200 - £2,500.
+                  </li>
+                  <li>
+                    <strong>"Automated Reminder Email for Overdue Invoices":</strong> A simple script or flow that
+                    integrates with accounting software to send templated reminders. Fixed Price: £750 - £1,500.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Ensure these initial offers have a very clear scope and demonstrable ROI (e.g., "Saves X hours/month
+                currently spent on manual report creation").
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Proactive Identification within Existing Client Base (Target: Week 2):</strong>
+            <ul>
+              <li>
+                During regular client interactions (especially for App Advisory or accounting services), actively listen
+                for mentions of repetitive tasks, data entry bottlenecks, or reconciliation frustrations.
+              </li>
+              <li>
+                Review your firm’s understanding of existing clients' processes to pinpoint those with obvious, simple
+                automation potential. Focus on clients who are generally tech-receptive.
+              </li>
+              <li>
+                Select 3-5 existing clients who seem like strong candidates for a small, pilot automation project.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Develop Targeted Communication & Proposal Snippets (Target: Week 2):</strong>
+            <ul>
+              <li>Create concise, benefit-driven descriptions for your "Quick Win" automation packages.</li>
+              <li>
+                Prepare a simple proposal template that outlines: The Problem We Solve, Our Proposed Automated Solution
+                (high-level), Key Benefits (Time Saved, Errors Reduced), Fixed Price, and What's Included/Excluded.
+              </li>
+              <li>
+                Highlight ROI statistics where possible (e.g., "Automating invoice capture can reduce data entry time by
+                up to 90%").
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Introduce Automation Concepts & Pilot Offers to Selected Clients (Target: Week 3 onwards):</strong>
+            <ul>
+              <li>
+                Approach the selected existing clients. Instead of a hard sell, offer a "Free Automation Opportunity
+                Assessment" (using your V1 Discovery Checklist).
+              </li>
+              <li>
+                If a viable "quick win" project is identified, present the relevant fixed-price package as a pilot.
+                Emphasize it as a way for them to experience the benefits of automation with low risk.
+              </li>
+              <li>
+                Example framing: "We've noticed you spend considerable time on X. We're launching a service to automate
+                such tasks and believe we can build a solution for Y price that will save you Z hours. Would you be
+                interested in being one of our first clients for this?"
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Execute Pilot Project(s) with Rigorous Documentation & Feedback (Target: Weeks 4-6):</strong>
+            <ul>
+              <li>
+                For the first 1-2 clients, deliver the scoped automation solution. Maintain close communication
+                throughout.
+              </li>
+              <li>
+                Thoroughly document the existing process, the developed solution, and the outcomes (time saved, errors
+                reduced). This forms the basis of your first case studies.
+              </li>
+              <li>
+                Solicit detailed feedback on the process, the solution's effectiveness, and the perceived value. This is
+                critical for refining your offering and pricing for future clients.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Leverage Success for Broader Marketing (Target: Post-Pilot):</strong>
+            <ul>
+              <li>Once a successful pilot is completed, create an anonymized case study.</li>
+              <li>
+                Begin to more broadly market the specific, proven "quick win" automation solutions to your wider client
+                base and through channels identified in general market research (e.g., LinkedIn, accounting forums,
+                partnerships with other firms lacking this capability).
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <footer>
+        <p>© 2025 Phipps Henson McAllister - Confidential Internal Proposal</p>
+      </footer>
+    </div>
+  </body>
+</html>
